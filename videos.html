@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos | The Attending Playbook</title>
+  <meta name="description" content="Short physician finance videos by Zac Otwell, CFP®, for residents, fellows, and new attending physicians." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#172333;--muted:#657184;--soft:#f5f7f9;--line:#dde3e8;--green:#215f91;--green-dark:#17466d;
+      --green-soft:#e8f1f8;--cream:#fbfaf6;--white:#fff;--shadow:0 14px 40px rgba(21,37,52,.08)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.55}
+    a{color:inherit;text-decoration:none}button,input{font:inherit}
+    .site-header{height:82px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);position:sticky;top:0;z-index:20}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:750;letter-spacing:-.02em}.brand-mark{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--green);color:#fff;font-size:13px;font-weight:800;letter-spacing:.03em}
+    .site-nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:600;color:#4c5868}.site-nav a.active{color:var(--green)}.nav-cta{background:var(--green);color:#fff!important;padding:11px 17px;border-radius:9px}
+    .page-shell{max-width:1680px;margin:0 auto;padding:0 56px}
+
+    .hero{padding:88px 0 54px;background:linear-gradient(180deg,var(--cream),#fff)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(330px,.8fr);gap:80px;align-items:end}
+    .eyebrow{margin:0 0 18px;color:var(--green);font-size:13px;line-height:1.2;text-transform:uppercase;letter-spacing:.13em;font-weight:800}
+    h1{font-size:58px;line-height:1.02;letter-spacing:-.055em;margin:0;max-width:790px;font-weight:800}
+    .hero-copy>p:last-of-type{max-width:700px;margin:24px 0 0;font-size:19px;color:var(--muted);line-height:1.65}
+    .hero-note{border-left:3px solid var(--green);padding:2px 0 2px 24px;margin-bottom:8px;color:#4e5c68;font-size:15px}.hero-note strong{display:block;color:var(--ink);margin-bottom:7px;font-size:16px}
+
+    .video-tools{padding:34px 0;border-bottom:1px solid var(--line)}.tool-row{display:flex;align-items:center;gap:14px}.search{position:relative;flex:1;max-width:520px}.search input{width:100%;border:1px solid #cfd7dd;border-radius:10px;padding:14px 16px 14px 42px;background:#fff;color:var(--ink);outline:none}.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:17px;color:#73808e}.filters{display:flex;gap:9px;flex-wrap:wrap}.filter{border:1px solid #d7dde2;background:#fff;color:#53606e;border-radius:999px;padding:10px 15px;font-size:13px;font-weight:650;cursor:pointer}.filter.active{background:var(--green-soft);border-color:#bfd2e2;color:var(--green-dark)}
+
+    .featured{padding:62px 0}.section-top{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.section-top h2{margin:5px 0 0;font-size:30px;letter-spacing:-.035em}.section-top a{font-size:14px;font-weight:700;color:var(--green)}
+    .featured-card{display:grid;grid-template-columns:1.12fr .88fr;min-height:420px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .feature-video{position:relative;background:linear-gradient(135deg,#173f61,#245f56);padding:34px;display:flex;align-items:center;justify-content:center;overflow:hidden}.feature-video:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 32%),linear-gradient(135deg,transparent 0 55%,rgba(255,255,255,.04) 55% 100%)}
+    .screen-copy{position:absolute;left:36px;top:34px;color:#fff;z-index:2}.screen-copy .mini{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:#cfe1dd}.screen-copy strong{display:block;max-width:330px;font-size:25px;line-height:1.15;letter-spacing:-.035em;margin-top:11px}
+    .play-large{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--green);font-size:24px;padding-left:5px;box-shadow:0 8px 26px rgba(0,0,0,.18);z-index:2}.duration-chip{position:absolute;right:24px;bottom:22px;background:rgba(15,47,73,.72);color:#fff;border-radius:6px;padding:7px 9px;font-size:12px;font-weight:700;z-index:2}
+    .feature-content{padding:48px;display:flex;flex-direction:column;justify-content:center}.topic{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--green);font-weight:800;margin:0 0 15px}.featured-card h3{font-size:34px;line-height:1.15;letter-spacing:-.035em;margin:0 0 17px}.featured-card p{color:var(--muted);margin:0 0 26px;font-size:16px}.meta{display:flex;gap:18px;color:#788493;font-size:12px;font-weight:600;margin-bottom:26px}.watch-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--green);font-weight:800}
+
+    .library{padding:16px 0 82px}.library-layout{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start}.sidebar{position:sticky;top:116px}.sidebar h3{font-size:13px;text-transform:uppercase;letter-spacing:.09em;margin:0 0 14px;color:#88929d}.sidebar a{display:flex;justify-content:space-between;align-items:center;padding:9px 0;font-size:14px;font-weight:600;color:#53606d;border-bottom:1px solid #eef1f3}.sidebar a:first-of-type{color:var(--green)}.count{font-size:11px;background:#f0f3f4;padding:3px 7px;border-radius:99px;color:#7d8792}
+    .video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.video-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:.2s ease}.video-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(24,39,54,.08);border-color:#cdd6dc}.thumb{height:190px;background:linear-gradient(135deg,#eaf1f7,#d8e5ef);position:relative;padding:20px;overflow:hidden}.thumb:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(33,95,145,.12);border-radius:50%;right:-58px;top:-48px;box-shadow:0 0 0 35px rgba(33,95,145,.035),0 0 0 70px rgba(33,95,145,.025)}.thumb-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--green);position:relative;z-index:2}.thumb-title{position:absolute;left:20px;bottom:20px;right:90px;font-size:20px;line-height:1.14;font-weight:800;letter-spacing:-.03em;color:var(--green-dark);z-index:2}.play-small{position:absolute;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;padding-left:3px;z-index:2}.video-body{padding:22px 24px 24px}.video-body h3{font-size:20px;line-height:1.3;letter-spacing:-.025em;margin:0 0 10px}.video-body p{font-size:14px;color:var(--muted);margin:0 0 18px}.video-footer{display:flex;align-items:center;justify-content:space-between}.video-footer .meta{margin:0}.video-footer a{font-size:13px;color:var(--green);font-weight:800}
+
+    .series-section{background:var(--soft);padding:72px 0}.series-header{max-width:700px;margin-bottom:30px}.series-header h2{font-size:34px;letter-spacing:-.04em;margin:7px 0 10px}.series-header p:last-child{color:var(--muted);margin:0}.series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.series-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}.series-icon{width:38px;height:38px;border-radius:10px;background:var(--green-soft);display:grid;place-items:center;color:var(--green);font-size:15px;font-weight:800;margin-bottom:22px}.series-card h3{margin:0 0 9px;font-size:18px}.series-card p{margin:0 0 16px;color:var(--muted);font-size:13px}.series-card a{font-size:13px;font-weight:800;color:var(--green)}
+
+    .signup{margin:74px auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding:38px 42px;background:var(--green);border-radius:16px;color:#fff}.signup h2{font-size:27px;letter-spacing:-.035em;margin:0 0 6px}.signup p{margin:0;color:#d5e6f3;font-size:14px}.signup form{display:flex;gap:9px}.signup input{width:260px;border:0;border-radius:8px;padding:13px 14px;outline:none}.signup button{border:0;border-radius:8px;padding:13px 17px;background:#fff;color:var(--green-dark);font-weight:800;cursor:pointer}
+    footer{border-top:1px solid var(--line);padding:28px 5vw 38px;display:flex;justify-content:space-between;color:#818b96;font-size:12px}footer div{display:flex;gap:22px}
+    @media(max-width:900px){.site-nav{display:none}.hero-grid,.featured-card,.library-layout,.signup{grid-template-columns:1fr}.hero{padding-top:54px}h1{font-size:44px}.video-grid,.series-grid{grid-template-columns:1fr}.sidebar{position:static}.hero-note{display:none}.signup form{flex-wrap:wrap}.page-shell{padding:0 24px}}
+  
+    .menu-button{display:none;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:9px;padding:9px 12px;font-weight:700;cursor:pointer}
+    @media(max-width:900px){.menu-button{display:block}.site-nav{display:none!important;position:absolute;left:20px;right:20px;top:72px;background:#fff;border:1px solid var(--line);box-shadow:0 14px 34px rgba(21,37,52,.12);border-radius:12px;padding:12px;flex-direction:column;align-items:stretch;gap:2px}.site-nav.open{display:flex!important}.site-nav a{padding:11px 12px;border-radius:8px}.site-nav .nav-cta{text-align:center;margin-top:4px}}
+    @media(max-width:600px){.page-shell{padding-left:18px!important;padding-right:18px!important}}
+
+    .creator-byline{margin:18px 0 0!important;font-size:13px!important;color:#7a8695!important;font-weight:600}
+    .creator-byline a{color:var(--green);font-weight:800}
+    .creator-byline a:hover{text-decoration:underline}
+    
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Zac Otwell", "honorificSuffix": "CFP\u00ae", "jobTitle": "Financial Planner", "description": "Financial planner focused on physicians and creator of The Attending Playbook", "image": "zac-otwell.png"}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">AP</span><span>The Attending Playbook</span></a>
+    <button class="menu-button" aria-label="Open menu">Menu</button>
+    <nav class="site-nav">
+      <a href="index.html#start">Start Here</a><a href="guides.html">Guides</a><a class="active" href="videos.html">Videos</a><a href="tools.html">Tools</a><a href="residency-programs.html">Residency Programs</a><a class="nav-cta" href="index.html#contact">Get updates</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="page-shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">The video library</p>
+          <h1>Complicated money decisions, explained without the hour-long lecture.</h1>
+          <p>Short, practical videos for residents, fellows, and new attendings who want the answer, the context, and what to do next.</p>
+        </div>
+        <div class="hero-note"><strong>Built to be watched between shifts.</strong>Most videos are under 10 minutes and focus on one decision at a time, from student loans and benefits to insurance, taxes, and your first attending paycheck.</div>
+      </div>
+    </section>
+
+    <section class="video-tools">
+      <div class="page-shell tool-row">
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input type="search" placeholder="Search videos by topic..." /></label>
+        <div class="filters"><button class="filter active">All videos</button><button class="filter">Student Loans</button><button class="filter">Insurance</button><button class="filter">Benefits</button><button class="filter">Taxes</button><button class="filter">Cash Flow</button></div>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="page-shell">
+        <div class="section-top"><div><p class="eyebrow">Featured video</p><h2>Start with the paycheck.</h2></div><a href="#library">Browse all videos →</a></div>
+        <article class="featured-card">
+          <div class="feature-video"><div class="screen-copy"><span class="mini">First attending year</span><strong>What to do with your first attending paycheck</strong></div><div class="play-large">▶</div><span class="duration-chip">8:14</span></div>
+          <div class="feature-content"><p class="topic">Cash Flow</p><h3>What to do with your first attending paycheck</h3><p>Your income may triple overnight. That does not mean every financial goal needs to happen at once. Here is a practical order for taxes, cash reserves, retirement contributions, debt, and lifestyle spending.</p><div class="meta"><span>8 min</span><span>First attending year</span></div><a class="watch-link" href="#">Watch video <span>→</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="library" id="library">
+      <div class="page-shell library-layout">
+        <aside class="sidebar"><h3>Browse by topic</h3><a href="#">All videos <span class="count">9</span></a><a href="#">Student Loans <span class="count">2</span></a><a href="#">Insurance <span class="count">2</span></a><a href="#">Benefits <span class="count">2</span></a><a href="#">Taxes <span class="count">1</span></a><a href="#">Cash Flow <span class="count">2</span></a></aside>
+        <div class="video-grid">
+          <article class="video-card"><div class="thumb"><span class="thumb-label">Insurance</span><div class="thumb-title">Term life insurance for physicians with young kids</div><div class="play-small">▶</div></div><div class="video-body"><h3>How much life insurance do you actually need?</h3><p>A simple way to think about income replacement, debt, college, and how long your family would need support.</p><div class="video-footer"><div class="meta"><span>6 min</span></div><a href="#">Watch →</a></div></div></article>
+          <article class="video-card"><div class="thumb"><span class="thumb-label">Benefits</span><div class="thumb-title">How to compare benefits at your first job</div><div class="play-small">▶</div></div><div class="video-body"><h3>Your benefits package is worth more than the salary line.</h3><p>What to look for in retirement plans, match formulas, disability coverage, HSA access, and other employer benefits.</p><div class="video-footer"><div class="meta"><span>10 min</span></div><a href="#">Watch →</a></div></div></article>
+          <article class="video-card"><div class="thumb"><span class="thumb-label">Student Loans</span><div class="thumb-title">PSLF vs refinancing after training</div><div class="play-small">▶</div></div><div class="video-body"><h3>Your attending salary changes the student loan math.</h3><p>How employer type, balance, income, and forgiveness progress can push the decision in very different directions.</p><div class="video-footer"><div class="meta"><span>9 min</span></div><a href="#">Watch →</a></div></div></article>
+          <article class="video-card"><div class="thumb"><span class="thumb-label">Taxes</span><div class="thumb-title">Why your W-4 may be wrong after residency</div><div class="play-small">▶</div></div><div class="video-body"><h3>A higher paycheck can create a surprisingly large tax problem.</h3><p>Why bonuses, moonlighting, two-income households, and midyear salary jumps can leave withholding short.</p><div class="video-footer"><div class="meta"><span>7 min</span></div><a href="#">Watch →</a></div></div></article>
+          <article class="video-card"><div class="thumb"><span class="thumb-label">Insurance</span><div class="thumb-title">Own-occupation disability insurance in plain English</div><div class="play-small">▶</div></div><div class="video-body"><h3>The policy language matters more than the monthly premium.</h3><p>What specialty-specific coverage means and why buying coverage before your health changes can matter.</p><div class="video-footer"><div class="meta"><span>8 min</span></div><a href="#">Watch →</a></div></div></article>
+          <article class="video-card"><div class="thumb"><span class="thumb-label">Cash Flow</span><div class="thumb-title">How much attending house can you afford?</div><div class="play-small">▶</div></div><div class="video-body"><h3>The bank's approval number is not your budget.</h3><p>How to think about mortgage payments alongside student loans, savings goals, taxes, insurance, and the rest of life.</p><div class="video-footer"><div class="meta"><span>9 min</span></div><a href="#">Watch →</a></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="series-section">
+      <div class="page-shell"><div class="series-header"><p class="eyebrow">Watch by stage</p><h2>Start with the videos that match where you are right now.</h2><p>You do not need to learn everything at once. Focus on the decisions in front of you, then move to the next stage.</p></div>
+        <div class="series-grid"><article class="series-card"><div class="series-icon">01</div><h3>Finishing training</h3><p>Contracts, student loans, disability insurance, job benefits, and preparing for the income jump.</p><a href="#">View series →</a></article><article class="series-card"><div class="series-icon">02</div><h3>First 90 days</h3><p>Paychecks, withholding, retirement elections, emergency funds, insurance, and getting the basics right.</p><a href="#">View series →</a></article><article class="series-card"><div class="series-icon">03</div><h3>First attending year</h3><p>Home buying, investing, debt payoff, lifestyle decisions, and turning higher income into long-term progress.</p><a href="#">View series →</a></article></div>
+      </div>
+    </section>
+
+    <div class="page-shell" id="updates"><section class="signup"><div><h2>Get the next video in your inbox.</h2><p>No spam. Just practical resources for the transition into practice.</p></div><form><input type="email" placeholder="Email address" aria-label="Email address"><button type="submit">Join the list</button></form></section></div>
+  </main>
+
+  <footer><p>© 2026 The Attending Playbook. Educational content only.</p><div><a href="#">Privacy</a><a href="#">Disclosures</a><a href="#">Contact</a></div></footer>
+  <script>document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}));</script>
+<script>document.addEventListener("DOMContentLoaded",()=>{const b=document.querySelector(".menu-button"),n=document.querySelector(".site-nav");if(b&&n)b.addEventListener("click",()=>n.classList.toggle("open"));document.querySelectorAll("form").forEach(f=>f.addEventListener("submit",e=>e.preventDefault()));});</script>
+</body>
+</html>
