@@ -1,30 +1,33 @@
+Sorry about that. Here's the updated `index.html` code directly. You can copy it and paste it into GitHub to replace your existing homepage.
+
+It removes your name, photo, and personal references while keeping the website's other sections intact.
+
+```
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Attending Playbook</title>
-  <meta name="description" content="Practical financial guides, tools, and resources for residents, fellows, and new attending physicians, created by financial planner, CFP®." />
+  <meta name="description" content="Practical financial guides, tools, and resources for residents, fellows, and new attending physicians." />
   <meta name="google-site-verification" content="WhxQvGB2Dk8v_EHJMNNX1pT_kYa53gGMQ-H-f3P1JYM" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .creator-section{display:block}
+    .creator-section .creator-copy{max-width:900px;margin:0 auto}
+  </style>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "The Attending Playbook",
-  "description": "Practical financial education for residents, fellows, and new attending physicians.",
-  "creator": {
-    "@type": "Person",
-    "name": "",
-    "honorificSuffix": "CFP\u00ae",
-    "jobTitle": "Financial Planner",
-    "description": "Financial planner focused on physicians and creator of The Attending Playbook",
-    "image": ".png"
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Attending Playbook",
+    "url": "https://attendingplaybook.com",
+    "description": "Practical financial education for residents, fellows, and new attending physicians."
   }
-}
   </script>
 </head>
 <body class="home-page">
@@ -175,17 +178,13 @@
       </div>
     </section>
 
-
-    <section class="section-pad creator-section" id="about-zac">
-      <div class="creator-photo-wrap">
-        <img src="zac-otwell.png" alt="Zac Otwell, CFP®, creator of The Attending Playbook" class="creator-photo" />
-      </div>
+    <section class="section-pad creator-section" id="about-playbook">
       <div class="creator-copy">
-        <p class="eyebrow">Who’s behind the playbook</p>
-        <h2>Built by a financial planner who works with physicians.</h2>
-        <p>I’m <strong>Zac Otwell, CFP®</strong>. I created The Attending Playbook to make the financial transition from training to attending life easier to navigate — especially the decisions around student loans, benefits, insurance, taxes, investing, and the first big jump in income.</p>
-        <p>The goal here is simple: practical education you can use before a financial decision becomes urgent.</p>
-        <a class="creator-link" href="about.html">More about Zac <span aria-hidden="true">→</span></a>
+        <p class="eyebrow">Why The Attending Playbook exists</p>
+        <h2>Making the financial transition into attending life easier to navigate.</h2>
+        <p>After years of medical training, physicians face a wave of financial decisions all at once — from student loans and benefits to insurance, taxes, investing, and managing a significant increase in income.</p>
+        <p>The Attending Playbook brings practical, easy-to-understand resources together so residents, fellows, and new attendings can approach those decisions with greater clarity and confidence.</p>
+        <a class="creator-link" href="about.html">More about the playbook <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -207,10 +206,14 @@
     <div>
       <a href="#">Privacy</a>
       <a href="#">Disclosures</a>
-      <a href="about.html">About Zac</a>
+      <a href="about.html">About</a>
       <a href="#contact">Contact</a>
     </div>
   </footer>
   <script src="script.js"></script>
 </body>
 </html>
+
+```
+
+After pasting this into `index.html`, click Commit changes in GitHub. Vercel should then deploy the updated homepage automatically.
